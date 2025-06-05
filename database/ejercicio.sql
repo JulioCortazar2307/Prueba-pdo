@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-06-2025 a las 20:54:44
+-- Tiempo de generación: 05-06-2025 a las 22:54:40
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -38,7 +38,8 @@ CREATE TABLE `tip_user` (
 
 INSERT INTO `tip_user` (`Id_tip_user`, `tip_usuer`) VALUES
 (1, 'Administrador'),
-(2, 'Aprendiz');
+(2, 'Aprendiz'),
+(3, 'Funcionario');
 
 -- --------------------------------------------------------
 
@@ -59,8 +60,10 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`documento`, `nombres`, `contrasena`, `user`, `id_tip_user`) VALUES
-(1030281200, 'Julio Cesar Cortazar', '12345678', 'Hyperbreak', 1),
-(1039281230, 'Juan David Cortazar', '123456789', 'Juanito', 2);
+(1030281200, 'Julio ', '123456789', 'Hyperbreak', 1),
+(1030281211, 'sebas', '123456789', 'sebastian', 2),
+(1030281286, 'juanes', '12345678', 'juanitos', 3),
+(1039281230, 'Juan ', '123456789', 'Juanito', 2);
 
 --
 -- Índices para tablas volcadas
@@ -87,7 +90,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT de la tabla `tip_user`
 --
 ALTER TABLE `tip_user`
-  MODIFY `Id_tip_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `Id_tip_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restricciones para tablas volcadas
