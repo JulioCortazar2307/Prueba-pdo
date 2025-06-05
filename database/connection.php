@@ -4,7 +4,7 @@
         private $database = "ejercicio" ;
         private $username = "root";
         private $password = "";
-        private $charset ="utf8";
+        private $charset = "utf8";
 
         function conectar()
         {
@@ -16,19 +16,15 @@
                 ];
             
             $pdo = new PDO($conexion, $this->username, $this->password, $option);
+            return $pdo;
             }
             catch(PDOException $e){
                 echo "Error de Conexion: " . $e->getMessage();
+                exit;
             };
 
             
         }
 
     }
-
-
-
-
-
-
 ?>
