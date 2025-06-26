@@ -16,9 +16,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>vista administrador</title>
+    <title>vista usuario</title>
 </head>
 <body>
-    <h1>Bienvenido señ@r<?php echo$fila['nombres'] ; ?></h1>
+    <h1>Bienvenido señ@r <?php echo$fila['nombres']; ?> su rol es <?php echo$fila['tip_usuer'];?></h1>
 </body>
 </html>
