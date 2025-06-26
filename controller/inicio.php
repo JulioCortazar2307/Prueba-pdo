@@ -18,18 +18,19 @@ if ($_POST["inicio"]) {
 
         $_SESSION['doc_user'] = $fila ['documento'];
         $_SESSION['tipo'] = $fila ['id_tip_user'];
-        echo "si encontro" ;
-        echo $_SESSION['doc_user'];
         
         
         if ($_SESSION['tipo']== 1) {
             header("location:../model/admin/index.php");
+            
         }
         if ($_SESSION['tipo']== 2) {
-            header("location:../model/usuario/index.php");
+            header("location:../model/usuarios/index.php");
+            
         }
         if ($_SESSION['tipo']== 3) {
-        header("location:../model/funcionario/index.php");
+            header("location:../model/funcionario/index.php");
+            
         }
 
 
@@ -44,6 +45,4 @@ else{
 
 
 }
-
-
 ?>

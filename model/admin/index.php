@@ -16,7 +16,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>vista administrador</title>
+    <title>vista admin</title>
 </head>
 <body>
     <h1>Bienvenido señ@r<?php echo$fila['nombres'] ; ?></h1>
