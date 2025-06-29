@@ -25,7 +25,7 @@ if ($_POST["inicio"]) {
             
         }
         if ($_SESSION['tipo']== 2) {
-            header("location:../model/usuarios/index.php");
+            header("location:../model/usuario/index.php");
             
         }
         if ($_SESSION['tipo']== 3) {
@@ -45,4 +45,6 @@ else{
 
 
 }
+
+
 ?>

@@ -9,8 +9,13 @@
  $sql -> execute();
  $fila = $sql -> fetch(); 
 ?>
-
-<!DOCTYPE html>
+<?php
+if (isset($_GET['cerrar_sesion'])) {
+    session_destroy();
+    header("location:../../index.html");
+    exit;
+} 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +24,11 @@
     <title>vista admin</title>
 </head>
 <body>
-    <h1>Bienvenido señ@r <?php echo$fila['nombres']; ?> su rol es <?php echo$fila['tip_usuer'];?></h1>
+    <h1>Bienvenido señ@r <?php echo $fila['nombres']; ?> su rol es <?php echo $fila['tip_usuer'];?></h1>
+    <form method="GET">
+        <button type="submit" name="cerrar_sesion">Cerrar Sesión</button>
+    </form>
+    <a href="create_tu.php">Crear tipo de usuario</a><br>
+    <a href="create_us.php">Crear usuario</a>
 </body>
 </html>
