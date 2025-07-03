@@ -7,7 +7,8 @@
  $doc = $_SESSION['doc_user'];
  $sql = $con ->prepare("SELECT * from user inner join tip_user on user.id_tip_user = tip_user.id_tip_user where user.documento = $doc") ;
  $sql -> execute();
- $fila = $sql -> fetch(); 
+ $usuario = $sql -> fetch(); 
+
 ?>
 <?php
 if (isset($_POST['cerrar_sesion'])) {
@@ -18,14 +19,15 @@ if (isset($_POST['cerrar_sesion'])) {
 <?php
 if (isset($_POST['guardar'])) {
     $tp = $_POST['tp'];
-    if ($tp){
-        $sql = $con->prepare("SELECT * FROM tip_user WHERE tip_usuer = ?");
-        $sql->execute([$tp]);
-        $fila = $sql -> fetch();
-        echo "<script>alert('El tipo de usuario ya existe');</script>";
+    $sql = $con->prepare("SELECT * FROM tip_user WHERE tip_usuer = ?");
+    $sql->execute([$tp]);
+    $fila = $sql -> fetch();
 
+
+    if ($fila){
+        echo "<script>alert('El tipo de usuario ya existe');</script>";
     }
-    if($tp){
+    else{
         $sql = $con->prepare("INSERT INTO tip_user (tip_usuer) VALUES (?)");
         $sql->execute([$tp]);
         echo "<script>alert('Tipo de usuario registrado exitosamente');</script>";
@@ -42,7 +44,7 @@ if (isset($_POST['guardar'])) {
 </head>
 <body>
     <h1>Modulo de creacion de roles</h1>
-    <h1>Bienvenido señ@r <?php echo $fila['nombres']; ?> su rol es <?php echo $fila['tip_usuer'];?></h1>
+    <h1>Bienvenido señ@r <?php echo $usuario['nombres']; ?> su rol es <?php echo $usuario['tip_usuer'];?></h1>
     <form action=".../index.html" method="GET">
     <button type="submit" name="cerrar_sesion">Cerrar Sesión</button>
     </form>

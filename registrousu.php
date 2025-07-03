@@ -3,6 +3,7 @@
   require_once("database/connection.php");
  $db = new database;
  $con = $db->conectar();
+
 ?>
 <?php 
   if(isset($_POST["registro"])){
@@ -12,9 +13,9 @@
     $user = $_POST['user'];
     $rol = $_POST['rol'];
 
-    $sql = $con-> prepare("select * from user where documento = ?");
-    $sql -> execute([$doc]);
-    $fila = $sql -> fetch();
+    $sql = $con-> prepare("select * from user where documento = ? or user = ?");
+    $sql -> execute([$doc,$user]);
+    $fila = $sql -> fetchAll();
 
     if($fila){
       echo "<script>alert('usuario ya existente');</script>";
@@ -50,10 +51,17 @@
             <label for="user">Usuario</label>
             <input type="Text" name="user" id="user" placeholder="Ingrese su Usuario">
             <label for="password">Tipo de usuario</label>
-            <select name="rol" id="rol" name="rol" >
-                <option value="1">Administrador</option>
-                <option value="2">Aprendiz</option>
-                <option value="3">Funcionario</option>
+            <select name="rol" id="rol" >
+                <option value="">Selecione uno</option>
+                <?php
+                 $control = $con-> prepare("SELECT * FROM tip_user WHERE id_tip_user >1");
+                 $control -> execute();
+
+                 while ($fila = $control->fetch(PDO::FETCH_ASSOC)){
+                  echo"<option value=".$fila["id_tip_user"].">".$fila["tip_usuer"]."</option>";
+                 }
+
+                ?>
             </select>
             <input type="submit" name="registro" id="registro" value="Registrarse">
             <a href="validarcorreo.html">Recordar Contraseña?</a>

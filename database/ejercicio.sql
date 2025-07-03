@@ -60,7 +60,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`documento`, `nombres`, `contrasena`, `user`, `id_tip_user`) VALUES
-(1030281200, 'Julio ', '123456789', 'Hyperbreak', 1),
+(1030281200, 'Julio ', '123456789', 'jules', 1),
 (1030281211, 'sebas', '123456789', 'sebastian', 2),
 (1030281286, 'juanes', '12345678', 'juanitos', 3),
 (1039281230, 'Juan ', '123456789', 'Juanito', 2);
