@@ -33,7 +33,6 @@ if ($_POST["inicio"]) {
             
         }
 
-
     }
 
     else{
