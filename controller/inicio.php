@@ -6,12 +6,10 @@ session_start();
 
 if ($_POST["inicio"]) {
     $nombre = $_POST["usuario"]; 
-    $contra = $_POST["clave"];  
-    
     //convertir en caracteres especiales
     $contra = htmlentities(addslashes($_POST["clave"]));
 
-    // consultar el usuario segun usuario y clave
+    // consultar el usuario segun usuario y claves
 
     $sql = $con ->prepare("SELECT * FROM user WHERE nombres = '$nombre' ") ;
     $sql -> execute();
@@ -29,7 +27,7 @@ if ($_POST["inicio"]) {
             
         }
         if ($_SESSION['tipo']== 2) {
-            header("location:../model/usuario/index.php");
+            header("location:../model/usuarios/index.php");
         }
         if ($_SESSION['tipo']== 3) {
             header("location:../model/funcionario/index.php");  
