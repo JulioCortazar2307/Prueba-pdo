@@ -26,8 +26,11 @@
     }
     
     else{
-     $sql = $con->prepare("INSERT INTO user (documento, nombres, contrasena, user, id_tip_user) VALUES (?, ?, ?, ?, ?)");
-     $sql -> execute([$doc, $name, $clave, $user, $rol]);
+      $hashing=password_hash($clave,PASSWORD_DEFAULT,array("pass"=> 12));
+
+
+     $sql = $con->prepare("INSERT INTO user (dni, nombres, contrasena, user, id_tip_user) VALUES (?, ?, ?, ?, ?)");
+     $sql -> execute([$doc, $name, $hashing, $user, $rol]);
      echo "<script>alert('Usuario registrado exitosamente');</script>"; 
     }
   }
@@ -62,7 +65,7 @@
                  $control = $con->prepare("SELECT * FROM tip_user");
                  $control->execute();
                  while ($fila = $control->fetch(PDO::FETCH_ASSOC)){
-                  echo "<option value=".$fila['Id_tip_user'].">".$fila['tip_usuer']."</option>";
+                  echo "<option value=".$fila['id_tip_user'].">".$fila['tip_usuer']."</option>";
                  }
                 ?>
             </select>
