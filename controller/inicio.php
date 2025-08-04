@@ -32,7 +32,12 @@ if ($_POST["inicio"]) {
         if ($_SESSION['tipo']== 3) {
             header("location:../model/funcionario/index.php");  
         }
+        else{
+           echo '<script> alert("usuario o cantraseña incorrrectos")</scritp>' ;  
+           header("location:../index.html");
+        }
     }
+
     else{
         echo '<script> alert("usuario no encontrado")</scritp>' ; 
     }

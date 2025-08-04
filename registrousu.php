@@ -32,6 +32,8 @@
      $sql = $con->prepare("INSERT INTO user (documento, nombres, contrasena, user, id_tip_user) VALUES (?, ?, ?, ?, ?)");
      $sql -> execute([$doc, $name, $hashing, $user, $rol]);
      echo "<script>alert('Usuario registrado exitosamente');</script>"; 
+     echo "<script>window.location='index.html'</script>";
+
     }
   }
 ?>
@@ -70,7 +72,7 @@
                 ?>
             </select>
             <input type="submit" name="registro" id="registro" value="Registrarse">
-            <a href="validarcorreo.html">Recordar Contraseña?</a>
+            <a href="validarcorreo.php">Recordar Contraseña?</a>
             <br>
             <a href="registrousu.php">Registrarme?</a>
         </form>
