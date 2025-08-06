@@ -22,13 +22,32 @@ if (isset($_GET['cerrar_sesion'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>vista admin</title>
+    <link rel="stylesheet" href="../../controller/css/style.css">
 </head>
 <body>
-    <h1>Bienvenido señ@r <?php echo $fila['nombres']; ?> su rol es <?php echo $fila['tip_usuer'];?></h1>
-    <form method="GET">
+    <header class="encabezado">
+
+        <h1>Bienvenido Señ@r <?php echo $fila['tip_usuer']?> <?php echo $fila['nombres']; ?></h1>
+        <form method="GET">
         <button type="submit" name="cerrar_sesion">Cerrar Sesión</button>
-    </form>
-    <a href="create_tu.php">Crear tipo de usuario</a><br>
-    <a href="create_us.php">Crear usuario</a>
+        </form>
+
+    </header>
+    <div class="contenedoradmin">
+        <div class="imgadmin">
+            <img src="../../controller/image/usuarios.png" alt="Usuarios" >
+        </div>
+        <div class="imgadmin">
+        <img src="../../controller/image/roles.png" alt="roles" >
+        </div>
+        
+        <br>    
+        <a href="create_tu.php">Crear tipo de usuario</a>
+        <br>
+        <a href="create_us.php">Crear usuario</a>
+    </div>
+    
+
+    
 </body>
 </html>

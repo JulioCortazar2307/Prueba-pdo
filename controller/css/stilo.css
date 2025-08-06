@@ -86,3 +86,20 @@ body {
 .login-box a:hover {
     color: #fff;
 }
+
+.encabezado{
+    background-color: aliceblue !important;
+    padding: 30px !important;
+    justify-content: space-between !important ;
+    
+}
+.encabezado h1{
+    display: flex;
+    color: #fff;
+}
+.contenedoradmin{
+    background-color: gray !important;
+    padding: 10% !important;
+    margin: 40px !important;
+    
+}

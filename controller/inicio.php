@@ -33,8 +33,8 @@ if ($_POST["inicio"]) {
             header("location:../model/funcionario/index.php");  
         }
         else{
-           echo '<script> alert("usuario o cantraseña incorrrectos")</scritp>' ;  
-           header("location:../index.html");
+            echo'<script> alert("usuario o contraseña incorrrectos")</scritp>' ;  
+            echo "<script>window.location='../index.html'</script>";
         }
     }
 
