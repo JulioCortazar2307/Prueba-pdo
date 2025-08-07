@@ -15,32 +15,42 @@ if ($_POST["inicio"]) {
     $sql -> execute();
     $fila = $sql -> fetch(); // fetchall todos o muchos fetch solo uno
 
-    if(password_verify($contra, $fila["contrasena"])) {
+    if($fila) { 
+        if(password_verify($contra, $fila["contrasena"])) {
 
-        $_SESSION['doc_user'] = $fila ['documento'];
-        $_SESSION['tipo'] = $fila ['id_tip_user'];
-        $_SESSION['nombre'] = $fila['nombres'];
+            $_SESSION['doc_user'] = $fila ['documento'];
+            $_SESSION['tipo'] = $fila ['id_tip_user'];
+            $_SESSION['nombre'] = $fila['nombres'];
         
         
-        if ($_SESSION['tipo']== 1) {
-            header("location:../model/admin/index.php");
-            
+            if ($_SESSION['tipo']== 1) { 
+                echo "<script>window.location='../model/admin/index.php';</script>";
+                exit;
+            }
+            elseif ($_SESSION['tipo']== 2) {
+                echo "<script>window.location='../model/usuarios/index.php';</script>";
+                exit;
+            }
+            elseif ($_SESSION['tipo']== 3) {
+                echo "<script>window.location='../model/funcionario/index.php';</script>";
+                exit; 
+            }
+            else{
+                echo'<script> alert("usuario o contraseña incorrrectos")</script>' ;  
+                echo "<script>window.location='../index.html'</script>";
+            }
         }
-        if ($_SESSION['tipo']== 2) {
-            header("location:../model/usuarios/index.php");
-        }
-        if ($_SESSION['tipo']== 3) {
-            header("location:../model/funcionario/index.php");  
-        }
+
         else{
-            echo'<script> alert("usuario o contraseña incorrrectos")</scritp>' ;  
+            echo '<script> alert("contraseña incorrecta")</script>' ; 
             echo "<script>window.location='../index.html'</script>";
         }
-    }
+}
 
-    else{
-        echo '<script> alert("usuario no encontrado")</scritp>' ; 
-    }
+else {
+    echo '<script>alert("usuario no encontrado")</script>';
+    echo "<script>window.location='../index.html'</script>";
+}
 }
 else{
 

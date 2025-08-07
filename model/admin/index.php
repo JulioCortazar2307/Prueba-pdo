@@ -3,7 +3,7 @@
   require_once("../../database/connection.php");
  $db = new database;
  $con = $db->conectar();
-
+ 
  $doc = $_SESSION['doc_user'];
  $sql = $con ->prepare("SELECT * from user inner join tip_user on user.id_tip_user = tip_user.id_tip_user where user.documento = $doc") ;
  $sql -> execute();
