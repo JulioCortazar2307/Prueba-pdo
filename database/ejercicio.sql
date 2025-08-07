@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-08-2025 a las 20:31:21
+-- Tiempo de generación: 07-08-2025 a las 02:52:28
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -62,12 +62,18 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`documento`, `nombres`, `contrasena`, `user`, `id_tip_user`) VALUES
-(122, 'sd', 'asda', 'asdsa', 2),
+(122, 'sd', '$2y$10$9P.2KgaE6I2TIPNk5QODueTS9oecax1aLuVZT5X8ErVahIUF8ZeZC', 'asdsa', 2),
+(11002299, 'JULIO', '$2y$10$AJ5QsKQpQYCjJufXzC3g/.JhlOu/RWY6TEegSFQszprIfyrJod7.O', 'JULIO', 1),
+(111122222, 'ssssss', '$2y$10$.4S.99z8Epz9AP3zSZ1mxOhpgx00RTGSdITTKPsHsTgxhJap0iYxK', 'ssssss', 1),
+(111222333, 'sebastian2', '$2y$10$GERADN9y41aP/OnonC9ZMuCSD3L1jviio3tQNLHCS2D7abew.7P7u', 'sebastian2', 2),
+(112223333, 'junn', '$2y$10$wWlLW.ynNcC4RQD6cWu8bu3LSNX/HmYiezvWPKv34tAyN1ZDquH5C', 'junn', 2),
 (1030281200, 'julio ', '123456789', 'jules', 1),
 (1030281211, 'sebas', '123456789', 'sebastian', 2),
 (1030281286, 'juanes', '12345678', 'juanitos', 3),
 (1039281230, 'Juan ', '123456789', 'Juanito', 2),
-(1111111111, 'jules', '123456789', 'robo', 2);
+(1111111111, 'jules', '123456789', 'robo', 2),
+(1111122222, 'cronos', '$2y$10$nGbsEs0PrSTdyYWjLqijiuSt.edZ02MbVsalUCXaiDTy/bgFgzI1y', 'cronos', 2),
+(2147483647, 'juan esteban', '$2y$10$rbUOoTOV3etmjBg/9hET1uQ5PJPMIk1ZlBcZXZ8W6pRAmthVKEHGa', 'hashing', 2);
 
 --
 -- Índices para tablas volcadas
