@@ -29,22 +29,20 @@ if (isset($_GET['cerrar_sesion'])) {
 
         <h1>Bienvenido Señ@r <?php echo $fila['tip_usuer']?> <?php echo $fila['nombres']; ?></h1>
         <form method="GET">
-        <button type="submit" name="cerrar_sesion">Cerrar Sesión</button>
+        <button type="submit" name="cerrar_sesion" class="boton_salir">Cerrar Sesión</button>
         </form>
 
     </header>
     <div class="contenedoradmin">
         <div class="imgadmin">
-            <img src="../../controller/image/usuarios.png" alt="Usuarios" >
+            <a href="usuario.php"><img src="../../controller/image/usuarios.png" alt="Usuarios" ></a>
+            <h2>Administrar usuarios</h2>
         </div>
         <div class="imgadmin">
-        <img src="../../controller/image/roles.png" alt="roles" >
+            <a href="roles.php"><img src="../../controller/image/roles.png" alt="roles" ></a>
+            <h2>Administrar Roles</h2>
         </div>
         
-        <br>    
-        <a href="create_tu.php">Crear tipo de usuario</a>
-        <br>
-        <a href="create_us.php">Crear usuario</a>
     </div>
     
 

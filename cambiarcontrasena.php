@@ -22,7 +22,7 @@ if(isset($_POST["inicio"])){
         $hashing=password_hash($con1,PASSWORD_DEFAULT,array("pass"=> 12));
         $sql = $con ->prepare("UPDATE user Set contrasena ='$hashing' WHERE documento = '$userconsul'") ;
         $sql -> execute();
-        echo "<script>alert('contraseñan actualizada correctamente');</script>";
+        echo "<script>alert('contraseña actualizada correctamente');</script>";
         echo "<script>window.location='index.html'</script>"; 
      }}
 ?>

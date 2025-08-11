@@ -120,21 +120,38 @@ body {
     color: #fff;
 }
 .encabezado{
-    background-color: aliceblue !important;
-    padding: 30px !important;
+    background-color: rgb(255, 255, 255) !important;
+    padding: 15px !important;
     justify-content: space-between !important ;
+    display: flex;
     
 }
 .encabezado h1{
-    display: flex;
-    color: #fff;
+    color: #000000;
 }
 .contenedoradmin{
-    background-color: gray !important;
-    padding: 10% !important;
-    margin: 40px !important;
-    display: flex;
-    justify-content: space-between;
+    background-color: rgb(255, 255, 255) !important;
+    padding: 7% !important;
+    margin-top: 40px !important ;
+    margin-bottom: 40px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    border-radius: 5px !important;
+    border-top: solid 4px #b80f22!important;
+    margin-left: 5%;
+    margin-right: 5%;
+    
+}
+.contenedoradmin2{
+    background-color: rgb(255, 255, 255) !important;
+    padding: 7% !important;
+    margin-top: 40px !important ;
+    margin-bottom: 40px !important;
+    border-radius: 5px !important;
+    border-top: solid 4px #b80f22!important;
+    margin-left: 5%;
+    margin-right: 5%;
+
     
 }
 .imgadmin img {
@@ -142,8 +159,21 @@ body {
     height: 200px !important;
     padding: 20px !important;
 }
+.boton_salir{
+    display: flex;
+    justify-content: end;
 
-
+}
+.crear_tipos_usuarios{
+    display: block;
+    justify-content: left;
+}
+.crear_tipos_usuarios {
+  margin-bottom: 30px;
+}
+.tabla_tipos_usuarios {
+  width: 100%;
+}
 
 
 

@@ -26,6 +26,7 @@ if ($_POST["inicio"]) {
             if ($_SESSION['tipo']== 1) { 
                 echo "<script>window.location='../model/admin/index.php';</script>";
                 exit;
+            
             }
             elseif ($_SESSION['tipo']== 2) {
                 echo "<script>window.location='../model/usuarios/index.php';</script>";
