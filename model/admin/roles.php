@@ -87,7 +87,7 @@ if (isset($_POST['guardar'])) {
       <?php
       foreach($restados as $resul):?>
         <th scope='row'> <?php echo $resul['Id_tip_user']?></th> 
-        <td> <?php echo $resul['tip_usuer']?></td>
+        <td> <?php echo $resul['tip_usuer']?> <a href="" onclick="window.open ('update_rol.php?id=<?php echo $resul['Id_tip_user'] ?>','',' width= 700, height= 500, toolbar=NO')"> Editar / Eliminar</a></td>
         </tr>
       <?php endforeach;?>
           
@@ -96,6 +96,3 @@ if (isset($_POST['guardar'])) {
 </body>
 </html>
 
-<style>
-
-</style>

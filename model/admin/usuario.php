@@ -10,9 +10,20 @@
  $fila = $sql -> fetch(); 
 ?>
 <?php
+  $sql1 = $con->prepare("SELECT * FROM  user INNER JOIN tip_user ON user.id_tip_user = tip_user.Id_tip_user ");
+  $sql1->execute();
+  $restados = $sql1->fetchAll(PDO::FETCH_ASSOC);
+  ?>
+<?php
 if (isset($_GET['cerrar_sesion'])) {
     session_destroy();
     header("location:../../index.html");
+    exit;
+} 
+?>
+<?php
+if (isset($_GET['regresar'])) {
+    header("location:index.php");
     exit;
 } 
 ?>
@@ -34,20 +45,37 @@ if (isset($_GET['cerrar_sesion'])) {
         <h1>Bienvenido Señ@r <?php echo $fila['tip_usuer']?> <?php echo $fila['nombres']; ?></h1>
         <form method="GET">
         <button type="submit" name="cerrar_sesion" class="boton_salir">Cerrar Sesión</button>
+        <button type="submit" name="regresar" class="boton_volver" > Regresar </button>
         </form>
 
     </header>
-    <div class="contenedoradmin">
+ <div class="contenedoradmin2">
+    <div class="tabla_tipos_usuarios">
+    <table class="table table-striped-columns tabla_tipos_usuarios">
+       <thead>
+    <tr>  
+      <th scope="col">ID usuario</th>
+      <th scope="col">Nombres de usuarios</th>
+      <th scope="col">Usuario</th>
+      <th scope="col">Tipo de usuario</th>
+      <th scope="col">Ediciones</th>
 
-        <?php 
-          $sql1 = $con->prepare("SELECT * FROM user, tip")
-        
-        ?>
-        <a href="" onclick="window.open
-        ('update.php?id=<?php echo $resul['doc'] ?>','','whidth= 700, height =500, toolbar=NO') void(null);">
-        Actualizar// Borrar
-        </a>
-    </div>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <?php
+      foreach($restados as $resul):?>
+        <th scope='row'> <?php echo $resul['documento']?></th>
+        <td> <?php echo $resul['nombres']?> </td> 
+        <td> <?php echo $resul['user']?> </td> 
+        <td> <?php echo $resul['tip_usuer']?> </td>
+        <td> <a href="" onclick="window.open ('update_user.php?id=<?php echo $resul['documento'] ?>','',' width= 700, height= 500, toolbar=NO')"> Editar / Eliminar</a></td>
+        </tr>
+      <?php endforeach;?>
+          
+    </table>
+  </div>
 </body>
 </html>
 
